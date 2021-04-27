@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::layout(~{::section})">
+
+<head>
+
+<meta charset="UTF-8" />
+<title>Register</title>
+
+</head>
+<body>
+
+	<section>
+
+		<div class="container">
+
+
+			<h1 class="text-center">Register Here</h1>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col md-6  offset-md-3">
+
+					<div class="my-card">
+						<div th:if="${session.message}" th:classappend="${session.message.type}" class="alert" role="alert"> 
+						<p th:text="${session.message.content}" >     </p>
+						
+						<th:block  th:text="${#session.removeAttribute('message')}" ></th:block>
+							</div>
+
+						<form action="" th:action="@{/do_register}" method="post"
+							th:object="${user}">
+
+
+							<div class="form-class">
+								<label for="name_field" class="form-label">Your Name </label> <input
+									name="name" type="text" class="form-control" id="name_field"
+									aria-describedby="emailHelp" placeholder="Enter here" required
+									th:value="${user.name}"> <br>
+
+							</div>
+
+							<div class="form-class">
+								<label for="email_field" class="form-label">Your Email </label>
+								<input name="email" type="email" class="form-control"
+									id="email_field" aria-describedby="emailHelp"
+									placeholder="Enter here" required th:value="${user.email}">
+								<br>
+							</div>
+
+							<div class="form-class">
+								<label for="password_field" class="form-label">Password
+								</label> <input name="password" type="password" class="form-control"
+									id="password_field" aria-describedby="emailHelp" required>
+								<br>
+
+							</div>
+
+							<div class="container text-center">
+
+								<button type="submit" value="send"
+									class="btn bg-primary text-white">Submit</button>
+
+							</div>
+
+						</form>
+
+
+					</div>
+
+
+
+				</div>
+
+			</div>
+		</div>
+
+
+	</section>
+
+
+</body>
+
+
+</html>

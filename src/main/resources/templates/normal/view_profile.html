@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="normal/base::layout(~{::section})">
+<head>
+<meta charset="UTF-8" />
+<title>User Profile</title>
+</head>
+<body>
+	<section>
+		
+		<a th:href="@{/user/edit_profile}" class="btn btn-primary float-left" style="float: right;">Edit</a>
+		
+		<div class="card w-75">
+			<div class="card-body">
+				<h1 th:text="${user.name}"></h1>
+			</div>
+		</div>
+
+        <div class="card w-75">
+			<div class="card-body">
+				<h5 class="card-title">Email</h5>
+				<p class="card-text"><span th:text="${user.email}" ></span></p>
+			</div>
+		</div>
+
+		<div class="card w-75">
+			<div class="card-body  position-relative">
+				<h5 class="card-title">Kd</h5>
+				<p class="card-text"><span th:text="${user.kd}" ></span></p>
+			</div>
+		</div>
+
+         <div class="card w-75">
+			<div class="card-body">
+				<h5 class="card-title">Role</h5>
+				<p class="card-text"><span th:text="${user.role_name}" ></span></p>
+			</div>
+		</div>
+		
+		<div class="card w-75">
+			<div class="card-body">
+				<h5 class="card-title">Experience</h5>
+				<p class="card-text"><span th:text="${user.experience}" ></span></p>
+			</div>
+		</div>
+		
+		<div class="card w-75">
+			<div class="card-body">
+				<h5 class="card-title">Phone</h5>
+				<p class="card-text"><span th:text="${user.phone}" ></span></p>
+			</div>
+		</div>
+		
+		<div class="card w-75">
+			<div class="card-body">
+				<h5 class="card-title">About</h5>
+				<p class="card-text"><span th:text="${user.about}" ></span></p>
+			</div>
+		</div>
+         
+         
+
+
+
+	</section>
+</body>
+</html>

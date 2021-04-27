@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="normal/base::layout(~{::section})">
+<head>
+<meta charset="UTF-8" />
+<title>Edit Profile</title>
+</head>
+<body>
+
+	<section>
+		<form action="#" th:action="@{/user/do_save}" th:object="${user}"
+			method="post">
+
+			<h4>Name</h4>
+			<input type="text" th:field="${user.name}"
+				class="form-control mb-4 col-4">
+
+			
+			<div class="form-class">
+								<label for="kd_field" class="form-label">Your Name </label> <input
+									name="kd" type="int" class="form-control" id="kd_field"
+									aria-describedby="emailHelp" placeholder="Enter here" required
+									th:value="${user.kd}"> <br>
+
+							</div>
+
+			<h4>Role</h4>
+			<input type="text" th:field="${user.role_name}"
+				class="form-control mb-4 col-4">
+
+			<h4>Experience</h4>
+			<input type="text" th:field="${user.experience}"
+				class="form-control mb-4 col-4">
+
+			<h4>Phone</h4>
+			<input type="text" th:field="${user.phone}"
+				class="form-control mb-4 col-4">
+				
+				<h4>About</h4>
+			<input type="text" th:field="${user.about}"
+				class="form-control mb-4 col-4">
+
+			<div class="container text-center">
+
+				<button type="submit" value="send" class="btn bg-primary text-white">Submit</button>
+
+			</div>
+
+
+		</form>
+
+	</section>
+
+</body>
+</html>
